@@ -246,15 +246,50 @@ html{
     width: 100%;
     border: 1px solid rgba(255, 0, 0, .3);
     .clearfix();
-
+    padding: 16px;
     > * {
       display: inline-block;
       float: left;
+      height: 40px;
+      line-height: 40px;
+      // &:not(.user){
+      //   //margin-top:  10px;
+      //   border: 1px solid rgba(255, 0, 0, .3);
+      // }
     }
     .user {
       width: 40px;
       height: 40px;
+      overflow: hidden;
+      border-radius: 20px;
+      img{
+        width: 100%;
+      }
     }
+    a{
+      max-width: 120px;
+      text-align: left;
+      padding-left: 5px;
+      text-decoration: none;
+      color: rgba(33, 33, 33, 1.00);
+    }
+    i {
+      width: 20px;
+      text-align: center;
+    }
+    div{
+      width: ~"calc(100% - 40px - 120px -10px -100px)";
+      text-align: left;
+      color: rgba(119, 119, 119, 1.00);
+    }
+    time{
+      float: right;
+      width: 100px;
+      color: rgba(133, 133, 133, 1.00);
+      font-size: 12px;
+
+    }
+
   }
 
 }
