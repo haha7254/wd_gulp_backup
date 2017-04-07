@@ -1,0 +1,96 @@
+/* Font Declaration
+====================*/
+@font-face {
+  font-family: 'Pixie';
+  src: url('font/icomcon/fonts/icomcon.eot');
+  src: url('font/icomcon/fonts/icomcon.eot?#iefix') format('embedded-opentype'), url('font/icomcon/fonts/icomcon.woff') format('woff'), url('font/icomcon/fonts/icomcon.ttf') format('truetype'), url('font/icomcon/fonts/icomcon.svg#icomoon') format('svg');
+}
+[class^='pixie icon-'] {
+  font-family: 'Pixie';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  display: inline-block;
+  padding: 0.3em 0.3em;
+  margin: 0em 0.1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.pixie.icon-pencil :before {
+  content: "\e603";
+}
+.pixie.icon-image :before {
+  content: "\e60d";
+}
+.pixie.icon-film :before {
+  content: "\e613";
+}
+.pixie.icon-quotes :before {
+  content: "\e676";
+}
+.pixie.icon-spinner :before {
+  content: "\e67c";
+}
+.pixie.icon-list :before {
+  content: "\e6b5";
+}
+.pixie.icon-numbered-list :before {
+  content: "\e6b6";
+}
+.pixie.icon-link :before {
+  content: "\e6c3";
+}
+.pixie.icon-spell-check :before {
+  content: "\e700";
+}
+.pixie.icon-bold :before {
+  content: "\e744";
+}
+.pixie.icon-underline :before {
+  content: "\e745";
+}
+.pixie.icon-italic :before {
+  content: "\e746";
+}
+.pixie.icon-strikethrough :before {
+  content: "\e747";
+}
+.pixie.icon-omega :before {
+  content: "\e748";
+}
+.pixie.icon-table :before {
+  content: "\e74b";
+}
+.pixie.icon-paragraph-left :before {
+  content: "\e754";
+}
+.pixie.icon-paragraph-center :before {
+  content: "\e755";
+}
+.pixie.icon-paragraph-right :before {
+  content: "\e756";
+}
+.pixie.icon-paragraph-justify :before {
+  content: "\e757";
+}
+.pixie.icon-indent-increase :before {
+  content: "\e758";
+}
+.pixie.icon-indent-decrease :before {
+  content: "\e759";
+}
+.pixie.icon-code :before {
+  content: "\e75c";
+}
+a > .pixie.linkbutton {
+  background-color: #eee;
+  color: #444;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+a > .pixie.linkbutton:hover {
+  background-color: #e1e1e1;
+}

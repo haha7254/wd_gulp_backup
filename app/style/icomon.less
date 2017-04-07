@@ -1,0 +1,119 @@
+@icon-font-path:                "font/icomcon/fonts/";
+@icon-font-name:                "icomcon";
+
+@font-size-big:                 2em;
+@font-size-medium:              1.5em;
+@font-size-small:               0.75em;
+@icon-vertical-align:           -15%;
+
+@color-success:                 green;
+@color-info:                    blue;
+@color-warning:                 orange;
+@color-danger:                  red;
+
+@linkbutton-color:              #444;
+@linkbutton-background-color:   #eee;
+
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+          border-radius: @radius;
+}
+
+.box-shadow(@h: 0em; @v: 0em; @blur: 0em; @spread: 0.1em; @inset: inset) {
+  -webkit-box-shadow: @arguments;
+          box-shadow: @arguments;
+}
+
+.rotate(@angle) {
+  -webkit-transform: rotate(@angle);
+      -ms-transform: rotate(@angle);
+          transform: rotate(@angle);
+}
+
+.scale(@x;@y) {
+  -webkit-transform: scale(@x,@y);
+      -ms-transform: scale(@x,@y);
+          transform: scale(@x,@y);
+}
+
+.animation(@name; @duration: 2s; @iteration: infinite; @timing: linear) {
+  -webkit-animation: @arguments;
+          animation: @arguments;
+}
+
+.keyframes(@prefix) when (@prefix = webkit) {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(359deg); }
+}
+
+.keyframes(@prefix) when (@prefix = none) {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(359deg); }
+}
+
+.keyframes(@prefix) {
+
+}
+
+/* Font Declaration
+====================*/
+
+@font-face {
+    font-family: 'Pixie';
+    src: url('@{icon-font-path}@{icon-font-name}.eot');
+    src: url('@{icon-font-path}@{icon-font-name}.eot?#iefix') format('embedded-opentype'),
+         url('@{icon-font-path}@{icon-font-name}.woff') format('woff'),
+         url('@{icon-font-path}@{icon-font-name}.ttf') format('truetype'),
+         url('@{icon-font-path}@{icon-font-name}.svg#icomoon') format('svg');
+}
+
+[class^='pixie icon-'] {
+    font-family: 'Pixie';
+    font-style:   normal;
+    font-weight:  normal;
+    font-variant: normal;
+    line-height:  1;
+
+    display: inline-block;
+
+    padding: 0.3em 0.3em;
+    margin: 0em 0.1em;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.pixie.icon-pencil                     { :before{content: "\e603";}}
+.pixie.icon-image                      { :before{content: "\e60d";}}
+.pixie.icon-film                       { :before{content: "\e613";}}
+.pixie.icon-quotes                     { :before{content: "\e676";}}
+.pixie.icon-spinner                    { :before{content: "\e67c";}}
+.pixie.icon-list                       { :before{content: "\e6b5";}}
+.pixie.icon-numbered-list              { :before{content: "\e6b6";}}
+.pixie.icon-link                       { :before{content: "\e6c3";}}
+.pixie.icon-spell-check                { :before{content: "\e700";}}
+.pixie.icon-bold                       { :before{content: "\e744";}}
+.pixie.icon-underline                  { :before{content: "\e745";}}
+.pixie.icon-italic                     { :before{content: "\e746";}}
+.pixie.icon-strikethrough              { :before{content: "\e747";}}
+.pixie.icon-omega                      { :before{content: "\e748";}}
+.pixie.icon-table                      { :before{content: "\e74b";}}
+.pixie.icon-paragraph-left             { :before{content: "\e754";}}
+.pixie.icon-paragraph-center           { :before{content: "\e755";}}
+.pixie.icon-paragraph-right            { :before{content: "\e756";}}
+.pixie.icon-paragraph-justify          { :before{content: "\e757";}}
+.pixie.icon-indent-increase            { :before{content: "\e758";}}
+.pixie.icon-indent-decrease            { :before{content: "\e759";}}
+.pixie.icon-code                       { :before{content: "\e75c";}}
+
+a>.pixie.linkbutton {
+  background-color: @linkbutton-background-color;
+             color: @linkbutton-color;
+
+  .border-radius(100%);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+a>.pixie.linkbutton:hover {
+  background-color: darken(@linkbutton-background-color, 5%);
+}
