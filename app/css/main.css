@@ -91,6 +91,7 @@ html body {
   width: 60px;
   font-size: 25px;
   position: relative;
+  cursor: pointer;
 }
 #header .content > label:before {
   position: absolute;
@@ -107,11 +108,22 @@ html body {
   font-size: 25px;
   letter-spacing: 2px;
 }
+@media screen and (min-width: 0) and (max-width: 499px) {
+  #header .content .title {
+    display: none;
+  }
+}
 #header .content .search_bar {
   position: relative;
   width: calc(100% - 60px - 150px - 60px);
   padding-right: 10px;
   *zoom: 1;
+}
+@media screen and (min-width: 0) and (max-width: 499px) {
+  #header .content .search_bar {
+    width: calc(100% - 60px  - 60px);
+    display: none;
+  }
 }
 #header .content .search_bar:after {
   display: table;
@@ -156,12 +168,15 @@ html body {
   width: 40px;
   height: 40px;
   margin-top: 10px;
+  cursor: pointer;
   overflow: hidden;
 }
 #header .content .user img {
   width: 100%;
 }
 #content {
+  position: relative;
+  z-index: 5px;
   display: inline-block;
   width: 100%;
   padding-top: 60px;
@@ -172,7 +187,17 @@ html body {
   max-width: 1000px;
   margin: 0 auto;
   padding: 10px;
-  padding-left: 210px;
+}
+@media screen and (min-width: 0) and (max-width: 400px) {
+  #content .content {
+    padding: 0;
+  }
+}
+@media screen and (min-width: 700px) {
+  #content .content {
+    padding-left: 210px;
+    transition: padding-left 0.3s;
+  }
 }
 #menu {
   position: fixed;
@@ -181,9 +206,78 @@ html body {
   display: inline-block;
   width: 200px;
   height: 100%;
-  border: 1 px solid rg ba(255, 0, 0, 0.3);
   z-index: 10;
-  padding-top: 70px;
+  opacity: 1;
+}
+@media screen and (min-width: 0) and (max-width: 699px) {
+  #menu {
+    left: -250px;
+    width: 250px;
+    background-color: white;
+    z-index: 40;
+    opacity: 0;
+    transition: left .3s, opacity .3s;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+@media screen and (min-width: 700px) {
+  #menu {
+    padding-top: 70px;
+    transition: top .3s, opacity .3s;
+  }
+}
+#menu + label {
+  position: fixed;
+  top: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -999;
+  opacity: 0;
+  cursor: pointer;
+}
+@media screen and (min-width: 700px) {
+  #menu + label {
+    display: none;
+  }
+}
+#menu header {
+  display: inline-block;
+  width: 100%;
+  padding: 0 10px;
+  height: 65px;
+  line-height: 65px;
+  *zoom: 1;
+  border-bottom: 1px solid #dddddd;
+}
+#menu header:after {
+  display: table;
+  content: "";
+  line-height: 0;
+  clear: both;
+}
+@media screen and (min-width: 700px) {
+  #menu header {
+    display: none;
+  }
+}
+#menu header > * {
+  display: inline-block;
+  float: left;
+}
+#menu header span {
+  width: calc(100% - 45px);
+  font-size: 25px;
+  letter-spacing: 2px;
+  text-align: left;
+  font-weight: bold;
+}
+#menu header label {
+  width: 15px;
+  line: 65px;
+  line-height: 65px;
+  cursor: pointer;
 }
 @media screen and (min-width: 1000px) {
   #menu {
@@ -221,14 +315,23 @@ html body {
 }
 #article {
   display: inline-block;
-  width: 650px;
+  width: 100%;
+  max-width: 650px;
   background-color: white;
+  margin-top: 10px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+}
+@media screen and (min-width: 0) and (max-width: 399px) {
+  #article {
+    margin-top: 0;
+  }
 }
 #article header {
   display: inline-block;
   width: 100%;
-  border: 1px solid rgba(255, 0, 0, 0.3);
   *zoom: 1;
+  padding: 16px;
+  padding-bottom: 0;
 }
 #article header:after {
   display: table;
@@ -239,8 +342,106 @@ html body {
 #article header > * {
   display: inline-block;
   float: left;
+  height: 40px;
+  line-height: 40px;
 }
 #article header .user {
   width: 40px;
   height: 40px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+#article header .user img {
+  width: 100%;
+}
+#article header a {
+  max-width: 120px;
+  text-align: left;
+  padding-left: 10px;
+  text-decoration: none;
+  color: #212121;
+}
+#article header i {
+  width: 20px;
+  text-align: center;
+}
+#article header div {
+  width: calc(100% - 40px - 120px -20px -100px);
+  text-align: left;
+  color: #777777;
+}
+#article header time {
+  float: right;
+  width: 100px;
+  color: #858585;
+  font-size: 12px;
+}
+#article section {
+  text-align: left;
+  padding: 20px;
+  padding-top: 0;
+  color: #2c2c2c;
+  font-size: 13px;
+  line-height: 21px;
+}
+#article .ckb {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  display: inline-block;
+}
+@media screen and (min-width: 700px) {
+  #menu_ckb:checked ~ #menu {
+    top: -100%;
+    opacity: 0;
+  }
+  #menu_ckb:checked ~ #content .content {
+    padding-left: 10px;
+  }
+}
+@media screen and (min-width: 0) and (max-width: 699px) {
+  #menu_ckb:checked ~ #menu {
+    left: 0;
+    opacity: 1;
+  }
+  #menu_ckb:checked ~ #menu + label {
+    opacity: 1;
+    z-index: 39;
+  }
+}
+#conf_ckb {
+  position: fixed;
+  top: 70px;
+  right: 10px;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  z-index: 40;
+  box-shadow: 0px 1px 8px #000000;
+}
+@media screen and (min-width: 1000px) {
+  #conf_ckb {
+    right: calc(50% - 1000px / 2 - 10px);
+  }
+}
+#conf_ckb:after {
+  bottom: 100%;
+  right: 30px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: transparent;
+  border-bottom-color: #ffffff;
+  border-width: 10px;
+  margin-left: -10px;
+}
+#conf_ckb:before {
+  border-color: rgba(194, 225, 245, 0);
+  border-bottom-color: #c2e1f5;
+  border-width: 11px;
+  margin-left: -11px;
 }
